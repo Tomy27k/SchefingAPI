@@ -7,12 +7,11 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const recipe = require('./routes/recipes');
-
+const env = require('./.env')
 var app = express();
 const mongoose = require('mongoose'); 
 
-
-mongoose.connect('mongodb+srv://tomy27k:159753123h@schefingcluster.ll47xdd.mongodb.net/test');
+mongoose.connect(DATABASE_URL)
 mongoose.connection.on('open',()=>{
   console.log('mongodb connection');
 
