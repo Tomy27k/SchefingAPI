@@ -4,7 +4,10 @@ const Schema = mongoose.Schema;
 const Recipes = new Schema({
     title:'string',
     content: 'string',
-    active: true,
+    active: {
+        default:true,
+        type: 'boolean',
+    },
     description: {
         timer: 'string',
         piece: 'number',
