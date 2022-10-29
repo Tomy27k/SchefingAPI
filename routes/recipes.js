@@ -12,20 +12,20 @@ router.get('/items', function(req, res,) {
    
   
 });
-router.post('/item-add',(req, res)=>{
-    const recipe = new Recipe({
-        title: 'kitap',
-        content: 'nasil yemek yapildi ',
-        contednt: 'nasil yemek dddyapildi ',
-        recipe: true,
-        description:{
-            time: '30 minutes',
-            piece: 3,
+// router.post('/recipe-create',(req, res)=>{
+//     console.log(req)
+    
+//     recipe.save((err,data)=>{ 
+//         res.json(data)
+//     })
+// });
+router.post('/recipe-create',(req, res)=>{
+    console.log(req.body,'dsd')
+    const recipe = new Recipe(req.body)
 
-        }
-    })
-    recipe.save((err,data)=>{ 
+    recipe.save((err,data)=>{
         res.json(data)
+        console.log(err , data)
     })
 })
 

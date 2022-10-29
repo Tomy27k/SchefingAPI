@@ -8,11 +8,9 @@ const Recipes = new Schema({
         default:true,
         type: 'boolean',
     },
-    description: {
-        timer: 'string',
-        piece: 'number',
-        service: 'string',
-    },
+    timer: 'string',
+    piece: 'number',
+    service: 'string',
     comment:[{
         author: 'string',
         content: 'string',
