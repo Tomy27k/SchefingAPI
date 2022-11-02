@@ -6,14 +6,21 @@ const Shop = new Schema({
     product_title:'string',
     product_category:'string',
     product_content:'string',
-    product_price:'string',
+    product_price:'number',
+    product_image:{
+        data: Buffer,
+        contentType: String
+    },
     product_comment:[{
         author:'string',
         content:'string',
        }],
-    product_discount:'string',
-    product_stock_piece:'string',
-    created_at: Date.now(),
+    product_discount:'number',
+    product_stock_piece:'number',
+    created_at:{
+        type:'date',
+        default: Date.now(),
+    },
 
 
 })
