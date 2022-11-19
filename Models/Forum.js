@@ -14,7 +14,10 @@ const Forum = new Schema({
         city: 'string',
     },
     title: 'string',
-    created_at: Date.now,
+    created_at: {
+        type:'date',
+        default: Date.now(),
+    },
 })
 
 module.exports = mongoose.model('forum',Forum)

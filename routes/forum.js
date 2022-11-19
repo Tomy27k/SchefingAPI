@@ -1,23 +1,13 @@
 const express = require('express');
 const router = express.Router();
-
-const Forum = require('../Models/Forum');
-
-
-router.get('/',async(req,res)=>{
-    Forum.find('title',(err,data)=>{
-        res.json(data)
-    })
-    try{
-        
-    }
-    catch(err){
-        console.log(err);
-    }
+const {forumShow,forumCreate,forumUpdate,forumDelete}=require('../controller/forumController')
 
 
 
+router.get('/show',forumShow);
+router.post('/create',forumCreate);
+router.put('/edit/:id',forumUpdate);
+router.delete('/delete/:id',forumDelete);
 
-    
-});
 
+module.exports = router;

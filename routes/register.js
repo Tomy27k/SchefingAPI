@@ -1,16 +1,12 @@
-const express = requre('express');
+const express = require('express');
 const router = express.Router();
-const Register = require('../Model/Register.js')
+const { registerShow,registerCreate,registerUpdate,registerDelete}= require('../controller/registerController');
 
 
-
-router.get('/show',(req,res)=>{
-    Register.find('',(err,data)=>{
-        res.json(data)
-        console.error(err);
-    })
-
-})
+router.get('/show',registerShow)
+router.post('/create',registerCreate)
+router.put('/edit/:id',registerUpdate)
+router.delete('/delete/:id',registerDelete)
 
 
 
